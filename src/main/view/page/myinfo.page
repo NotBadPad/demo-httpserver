@@ -1,0 +1,13 @@
+<html>
+<head>
+<link href="/css/test.css" rel="stylesheet">
+<script src="/js/test.js" ></script>
+</head>
+<body>
+	<div class="th1"> ${msg},${name} </div>
+	<img src="/pic/C_3.png" />
+	<script>
+		print("aaaa");
+	</script>
+</body>
+</html>

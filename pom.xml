@@ -33,6 +33,9 @@
 			<resource>
 				<directory>${basedir}/src/main/resources</directory>
 			</resource>
+			<resource>
+				<directory>${basedir}/src/main/view</directory>
+			</resource>
 		</resources>
 
 	<plugins>

@@ -11,6 +11,7 @@ import org.eh.core.web.controller.Controller;
  * @author guojing
  * @date 2014-3-4
  */
+@org.eh.core.annotation.Controller(name = "my", url = "/test/list")
 public class MyController implements Controller {
 
 	public ResultInfo process(Map<String, Object> parms) {
