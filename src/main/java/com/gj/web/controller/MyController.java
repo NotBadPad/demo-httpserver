@@ -21,7 +21,7 @@ public class MyController implements Controller {
 		map.put("msg", parms.get("msg"));
 
 		resultInfo.setResultMap(map);
-		resultInfo.setView("myinfo");
+		resultInfo.setView("json:[{\"name\":\"aaa\"},{\"value\":\"bbb\"},{\"msg\":\"ttt\"}]");
 		return resultInfo;
 	}
 
