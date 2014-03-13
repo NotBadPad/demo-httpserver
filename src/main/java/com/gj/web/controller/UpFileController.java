@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Map;
 
+import org.eh.core.annotation.RequestMapping;
 import org.eh.core.model.FileInfo;
 import org.eh.core.model.ResultInfo;
 import org.eh.core.web.controller.Controller;
@@ -14,11 +15,11 @@ import org.eh.core.web.controller.Controller;
  * @author guojing
  * @date 2014-3-10
  */
-@org.eh.core.annotation.Controller(name = "my", url = "/page/upload")
+@org.eh.core.annotation.Controller(name = "my", url = "/page/")
 public class UpFileController implements Controller {
 
-	@Override
-	public ResultInfo process(Map<String, Object> parms) {
+	@RequestMapping
+	public ResultInfo upload(Map<String, Object> parms) {
 		ResultInfo re = new ResultInfo();
 
 		FileInfo fileInfo = (FileInfo) parms.get("myfile");
