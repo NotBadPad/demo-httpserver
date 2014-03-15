@@ -12,7 +12,7 @@ import org.eh.core.web.controller.Controller;
  * @author guojing
  * @date 2014-3-10
  */
-@org.eh.core.annotation.Controller(name = "velocity", url = "/test/velocity/")
+@org.eh.core.annotation.Controller(name = "velocity", url = "/velocity/")
 public class VelocityController implements Controller {
 
 	@RequestMapping

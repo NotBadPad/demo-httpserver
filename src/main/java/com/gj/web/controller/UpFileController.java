@@ -15,7 +15,7 @@ import org.eh.core.web.controller.Controller;
  * @author guojing
  * @date 2014-3-10
  */
-@org.eh.core.annotation.Controller(name = "my", url = "/page/")
+@org.eh.core.annotation.Controller(name = "file", url = "/upfile/")
 public class UpFileController implements Controller {
 
 	@RequestMapping

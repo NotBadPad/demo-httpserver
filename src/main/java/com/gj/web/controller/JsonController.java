@@ -3,6 +3,7 @@ package com.gj.web.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eh.core.annotation.RequestMapping;
 import org.eh.core.model.ResultInfo;
 import org.eh.core.web.controller.Controller;
 
@@ -11,10 +12,11 @@ import org.eh.core.web.controller.Controller;
  * @author guojing
  * @date 2014-3-4
  */
-@org.eh.core.annotation.Controller(name = "my", url = "/test/")
-public class MyController implements Controller {
+@org.eh.core.annotation.Controller(name = "my", url = "/json/")
+public class JsonController implements Controller {
 
-	public ResultInfo list(Map<String, Object> parms) {
+	@RequestMapping
+	public ResultInfo show(Map<String, Object> parms) {
 		ResultInfo resultInfo = new ResultInfo();
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("name", parms.get("name"));
