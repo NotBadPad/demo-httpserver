@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eh.core.annotation.RequestMapping;
+import org.eh.core.common.ReturnType;
 import org.eh.core.model.ResultInfo;
 import org.eh.core.web.controller.Controller;
 
@@ -23,7 +24,8 @@ public class JsonController implements Controller {
 		map.put("msg", parms.get("msg"));
 
 		resultInfo.setResultMap(map);
-		resultInfo.setView("json:[{\"name\":\"aaa\"},{\"value\":\"bbb\"},{\"msg\":\"ttt\"}]");
+		resultInfo.setView(ReturnType.json.name()
+				+ ":[{\"name\":\"aaa\"},{\"value\":\"bbb\"},{\"msg\":\"ttt\"}]");
 		return resultInfo;
 	}
 
