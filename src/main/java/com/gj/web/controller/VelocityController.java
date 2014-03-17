@@ -23,7 +23,7 @@ public class VelocityController implements Controller {
 		map.put("msg", parms.get("msg"));
 
 		resultInfo.setResultMap(map);
-		resultInfo.setView("myvm");
+		resultInfo.setView("velocity:myvm");
 		return resultInfo;
 	}
 
