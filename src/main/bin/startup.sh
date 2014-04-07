@@ -1,11 +1,11 @@
 APP_HOME=${PWD}/..
-MAIN_CLASS_NAME="com.chaoxing.bidinfo.main.RmiStartServer"
-PORT=`sed "s/.*=//g" $APP_HOME/classes/rmicfg.properties`
+MAIN_CLASS_NAME="org.eh.core.http.EHServer"
+PORT=`sed "s/.*=//g" $APP_HOME/classes/web.properties`
 
 JVM_ARGS="-DlogDir=$APP_HOME/logs"
-if [ -r app.vmoptions ];then
-JVM_ARGS="$JVM_ARGS `tr '\n' ' ' < app.vmoptions`"
-fi
+#if [ -r app.vmoptions ];then
+#JVM_ARGS="$JVM_ARGS `tr '\n' ' ' < app.vmoptions`"
+#fi
 
 process_Id=`/usr/sbin/lsof -i tcp:$PORT|awk '{print $2}'|sed '/PID/d'`
 
@@ -25,12 +25,12 @@ export CLASSPATH
 #echo "JVM_ARGS is $JVM_ARGS "
 #echo "MAIN_CLASS_NAME is $MAIN_CLASS_NAME"
 #echo "process_Id is $process_Id \n"
-#echo "$PORT \n"
+echo "$PORT \n"
 #echo "$JAVA_HOME/bin/java $JVM_ARGS -classpath $CLASSPATH $MAIN_CLASS_NAME $PORT &"
 
 
 start(){
-    printf 'RenderServer is starting...\n'
+    printf 'EHServer is starting...\n'
     if [ $process_Id ];then
        kill -9 $process_Id
        sleep 1
@@ -40,7 +40,7 @@ start(){
 }
 
 restart(){
-    printf 'RenderServer is restart...\n'
+    printf 'EHServer is restart...\n'
     if [ $process_Id ];then
        kill -9 $process_Id
        sleep 1
@@ -50,15 +50,12 @@ restart(){
 }
 
 stop (){
-   printf 'RenderServer is stoping...\n'
+   printf 'EHServer is stoping...\n'
    if [ $process_Id ];then
      kill -9 $process_Id 
    fi 
 }
  
-
-
-
 case "$1" in
 start)
   start
@@ -71,7 +68,7 @@ stop)
 ;;
 *)
   printf 'Usage:%s {start|restart|stop}\n'
-  printf 'app.vmoptions is configuration for  JVM \n '
+#  printf 'app.vmoptions is configuration for  JVM \n '
   exit 1
   ;;
 esac
