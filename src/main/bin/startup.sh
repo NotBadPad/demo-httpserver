@@ -20,5 +20,4 @@ for file in $libs;    do
 done 
 export CLASSPATH=$temp:.:../:$programdir 
 export LANG=zh_CN 
-printf 'EHServer is starting...\n'
-nohup java $JVM_ARGS -classpath $CLASSPATH  org.eh.core.http.EHServer >../nohup.out &
+nohup java -classpath $CLASSPATH  org.eh.core.http.EHServer & >>ehserver.log 2>>1&
