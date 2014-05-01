@@ -19,5 +19,5 @@ for file in $libs;    do
                 append $file 
 done 
 export CLASSPATH=$temp:.:../:$programdir 
-export LANG=zh_CN 
+
 nohup java -classpath $CLASSPATH  org.eh.core.http.EHServer & >>ehserver.log 2>>1&
