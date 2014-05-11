@@ -9,7 +9,7 @@ import org.eh.core.model.ResultInfo;
 import org.eh.core.web.controller.Controller;
 
 /**
- *
+ * Json使用示例
  * @author guojing
  * @date 2014-3-4
  */
